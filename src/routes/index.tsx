@@ -3,6 +3,7 @@ import { BookOpen, Link2 } from "lucide-react";
 import { IngestionPanel } from "@/components/ingestion-panel";
 import { RecentKits } from "@/components/recent-kits";
 import { StartHereButton } from "@/components/start-here-button";
+import { useLang, LanguageToggle } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,42 +15,38 @@ export const Route = createFileRoute("/")({
           "Paste a URL or drop assets. Get the palette, type, voice, and tokens — ready for your next pitch deck or build.",
       },
     ],
-    links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:wght@400;700&family=Libre+Baskerville:ital@0;1&display=swap",
-      },
-    ],
   }),
   component: Landing,
 });
 
 function Landing() {
+  const { t } = useLang();
   return (
     <>
       <style>{css}</style>
 
       <div className="page">
         <nav className="nav">
-          <Link to="/" className="brand">Brand Kit</Link>
+          <Link to="/" className="brand">{t("brand")}</Link>
           <div className="nav-center">
             <StartHereButton />
           </div>
           <div className="nav-links">
             <Link to="/library">
-              <BookOpen aria-hidden /> Library
+              <BookOpen aria-hidden /> {t("library")}
             </Link>
             <Link to="/shorten">
-              <Link2 aria-hidden /> Shorten
+              <Link2 aria-hidden /> {t("shorten")}
+            </Link>
+            <LanguageToggle className="lang-toggle" />
+            <Link to="/" style={{display:"none"}}>
             </Link>
           </div>
         </nav>
 
         <main className="hero">
           <h1 className="headline">
-            Get their <em>brand.</em>
+            {t("headlineA")} <em>{t("headlineB")}</em>
           </h1>
 
           <div className="panel-mount">
@@ -114,6 +111,7 @@ const css = `
     font-size: 11px;
     letter-spacing: 0.20em;
     text-transform: uppercase;
+    align-items: center;
   }
   .nav-links a {
     color: var(--sumi);
@@ -124,6 +122,8 @@ const css = `
     align-items: center;
     gap: 6px;
   }
+  .lang-toggle { background: none; border: 1px solid var(--hairline); border-radius: 999px; padding: 4px 12px; font: inherit; color: var(--sumi); cursor: pointer; }
+  .lang-toggle:hover { background: var(--hanko); }
   .nav-links a:hover { opacity: 1; color: var(--hanko); }
   .nav-links a svg { width: 13px; height: 13px; stroke-width: 1.5; }
 
@@ -159,8 +159,9 @@ const css = `
     margin: 0 0 28px;
   }
   .headline em {
-    font-style: italic;
-    font-weight: 400;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--hanko);
   }
 
   .lede {
