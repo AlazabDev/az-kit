@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Link2 } from "lucide-react";
 import { StartHereButton } from "@/components/start-here-button";
 
 const navLinkClass =
@@ -12,7 +12,7 @@ export function SiteHeader() {
   return (
     <header
       className="sticky top-0 z-30 bg-background"
-      style={{ borderBottom: "1px solid #0A0A0A" }}
+      style={{ borderBottom: "1px solid #030957" }}
     >
       <div className="relative mx-auto flex h-12 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link
@@ -28,6 +28,10 @@ export function SiteHeader() {
           <Link to="/library" className={navLinkClass}>
             <BookOpen className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
             Library
+          </Link>
+          <Link to="/shorten" className={navLinkClass}>
+            <Link2 className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+            Shorten
           </Link>
           <Link to="/" className={`${ctaClass} whitespace-nowrap`}>
             New kit

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Link2 } from "lucide-react";
 import { IngestionPanel } from "@/components/ingestion-panel";
 import { RecentKits } from "@/components/recent-kits";
 import { StartHereButton } from "@/components/start-here-button";
@@ -41,6 +41,9 @@ function Landing() {
             <Link to="/library">
               <BookOpen aria-hidden /> Library
             </Link>
+            <Link to="/shorten">
+              <Link2 aria-hidden /> Shorten
+            </Link>
           </div>
         </nav>
 
@@ -62,10 +65,10 @@ function Landing() {
 
 const css = `
   :root {
-    --washi: #F4EFE6;
-    --sumi: #0A0A0A;
-    --hairline: rgba(10,10,10,0.20);
-    --hanko: #8B1A1A;
+    --washi: #f8f8f8;
+    --sumi: #030957;
+    --hairline: rgba(3,9,87,0.20);
+    --hanko: #ffb900;
   }
 
   html, body {
@@ -142,7 +145,7 @@ const css = `
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(10,10,10,0.55);
+    color: rgba(3,9,87,0.55);
     margin-bottom: 36px;
   }
 
@@ -165,7 +168,7 @@ const css = `
     font-style: italic;
     font-size: 16px;
     line-height: 1.55;
-    color: rgba(10,10,10,0.72);
+    color: rgba(3,9,87,0.72);
     max-width: 480px;
     margin: 0 0 48px;
   }
@@ -182,7 +185,7 @@ const css = `
     font-size: 10px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: rgba(10,10,10,0.45);
+    color: rgba(3,9,87,0.45);
   }
 
   /* ---------- How ---------- */
@@ -198,7 +201,7 @@ const css = `
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(10,10,10,0.55);
+    color: rgba(3,9,87,0.55);
     margin-bottom: 28px;
   }
   .how-list {
@@ -223,13 +226,13 @@ const css = `
     font-family: 'Courier Prime', monospace;
     font-size: 11px;
     letter-spacing: 0.18em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(3,9,87,0.55);
   }
   .how-list .dim {
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
     font-size: 14px;
-    color: rgba(10,10,10,0.65);
+    color: rgba(3,9,87,0.65);
   }
 
   @media (max-width: 640px) {

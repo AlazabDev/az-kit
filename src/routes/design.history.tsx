@@ -71,12 +71,12 @@ function HistoryPage() {
           </Link>
         </div>
 
-        <div className="mt-2" style={{ borderTop: "1px solid rgba(10,10,10,0.25)" }} />
+        <div className="mt-2" style={{ borderTop: "1px solid rgba(3,9,87,0.25)" }} />
 
         {/* Compare bar */}
         <div
           className="mt-8 grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr_auto] items-center gap-4 p-6"
-          style={{ border: "1px solid #0A0A0A" }}
+          style={{ border: "1px solid #030957" }}
         >
           <label className="flex flex-col gap-2">
             <span className={eyebrow}>// from</span>
@@ -84,7 +84,7 @@ function HistoryPage() {
               value={aId}
               onChange={(e) => setAId(e.target.value)}
               className="bg-transparent font-mono text-[13px] py-2 px-3"
-              style={{ border: "1px solid rgba(10,10,10,0.25)" }}
+              style={{ border: "1px solid rgba(3,9,87,0.25)" }}
             >
               {versions.map((v) => (
                 <option key={v.id} value={v.id}>
@@ -101,7 +101,7 @@ function HistoryPage() {
               value={bId}
               onChange={(e) => setBId(e.target.value)}
               className="bg-transparent font-mono text-[13px] py-2 px-3"
-              style={{ border: "1px solid rgba(10,10,10,0.25)" }}
+              style={{ border: "1px solid rgba(3,9,87,0.25)" }}
             >
               {versions.map((v) => (
                 <option key={v.id} value={v.id}>
@@ -116,7 +116,7 @@ function HistoryPage() {
             disabled={!aId || !bId || aId === bId}
             className={mono + " hover:opacity-90 transition-opacity disabled:opacity-30"}
             style={{
-              border: "1px solid #0A0A0A",
+              border: "1px solid #030957",
               padding: "12px 32px",
               backgroundColor: "var(--foreground)",
               color: "var(--background)",
@@ -127,7 +127,7 @@ function HistoryPage() {
         </div>
 
         {/* Timeline */}
-        <ul className="mt-12" style={{ borderTop: "1px solid rgba(10,10,10,0.25)" }}>
+        <ul className="mt-12" style={{ borderTop: "1px solid rgba(3,9,87,0.25)" }}>
           {busy ? (
             <li className="py-8">
               <p className={eyebrow}>Loading…</p>
@@ -141,7 +141,7 @@ function HistoryPage() {
               <li
                 key={v.id}
                 className="grid grid-cols-[80px_1fr_auto] items-baseline gap-6 py-6"
-                style={{ borderBottom: "1px solid rgba(10,10,10,0.25)" }}
+                style={{ borderBottom: "1px solid rgba(3,9,87,0.25)" }}
               >
                 <span className="font-mono text-[12px] tracking-[0.1em]">
                   v{String(v.version).padStart(2, "0")}.

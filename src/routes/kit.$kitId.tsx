@@ -807,7 +807,7 @@ function ColorCard({
   }
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border border-[color:var(--border-subtle)] bg-card shadow-[0_1px_0_rgba(10,10,10,0.04),0_6px_18px_-14px_rgba(10,10,10,0.18)] transition-all duration-200 hover:-translate-y-[1px] hover:border-[color:rgba(10,10,10,0.35)]">
+    <div className="group relative overflow-hidden rounded-lg border border-[color:var(--border-subtle)] bg-card shadow-[0_1px_0_rgba(3,9,87,0.04),0_6px_18px_-14px_rgba(3,9,87,0.18)] transition-all duration-200 hover:-translate-y-[1px] hover:border-[color:rgba(3,9,87,0.35)]">
       {canEdit && !editing && (
         <div className="absolute right-2 top-2 z-10 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100 focus-within:opacity-100">
           <button
@@ -846,14 +846,14 @@ function ColorCard({
               value={role}
               onChange={(e) => setRole(e.target.value)}
               placeholder="role"
-              className="w-full rounded-md border border-[color:var(--border-subtle)] bg-background px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] outline-none focus:border-[color:rgba(10,10,10,0.45)]"
+              className="w-full rounded-md border border-[color:var(--border-subtle)] bg-background px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] outline-none focus:border-[color:rgba(3,9,87,0.45)]"
             />
             <input
               value={hex}
               onChange={(e) => setHex(e.target.value)}
               placeholder="#RRGGBB"
               spellCheck={false}
-              className="w-full rounded-md border border-[color:var(--border-subtle)] bg-background px-2 py-1 font-mono text-[11px] uppercase tracking-[0.12em] outline-none focus:border-[color:rgba(10,10,10,0.45)]"
+              className="w-full rounded-md border border-[color:var(--border-subtle)] bg-background px-2 py-1 font-mono text-[11px] uppercase tracking-[0.12em] outline-none focus:border-[color:rgba(3,9,87,0.45)]"
             />
             <div className="flex gap-1">
               <button
@@ -925,9 +925,9 @@ function ColorsSection({
     (a, b) => relativeLuminance(b.hex) - relativeLuminance(a.hex),
   );
   const lightest = sortedByLum[0]?.hex ?? "#ffffff";
-  const darkest = sortedByLum[sortedByLum.length - 1]?.hex ?? "#0a0a0a";
+  const darkest = sortedByLum[sortedByLum.length - 1]?.hex ?? "#030957";
   const lightBg = relativeLuminance(lightest) > 0.7 ? lightest : "#ffffff";
-  const darkBg = relativeLuminance(darkest) < 0.15 ? darkest : "#0a0a0a";
+  const darkBg = relativeLuminance(darkest) < 0.15 ? darkest : "#030957";
   const lightText = darkest;
   const darkText = lightest;
 
@@ -1675,7 +1675,7 @@ function AssetsSection({
         return (
           <div
             key={a.id}
-            className="group relative overflow-hidden rounded-xl border border-[color:var(--border-subtle)] bg-card shadow-[0_1px_0_rgba(10,10,10,0.04),0_8px_24px_-16px_rgba(10,10,10,0.18)]"
+            className="group relative overflow-hidden rounded-xl border border-[color:var(--border-subtle)] bg-card shadow-[0_1px_0_rgba(3,9,87,0.04),0_8px_24px_-16px_rgba(3,9,87,0.18)]"
           >
             <button
               type="button"
@@ -1691,7 +1691,7 @@ function AssetsSection({
               style={{
                 background: "var(--surface)",
                 backgroundImage: showChecker
-                  ? "linear-gradient(45deg, rgba(10,10,10,0.04) 25%, transparent 25%), linear-gradient(-45deg, rgba(10,10,10,0.04) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(10,10,10,0.04) 75%), linear-gradient(-45deg, transparent 75%, rgba(10,10,10,0.04) 75%)"
+                  ? "linear-gradient(45deg, rgba(3,9,87,0.04) 25%, transparent 25%), linear-gradient(-45deg, rgba(3,9,87,0.04) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(3,9,87,0.04) 75%), linear-gradient(-45deg, transparent 75%, rgba(3,9,87,0.04) 75%)"
                   : undefined,
                 backgroundSize: "12px 12px",
                 backgroundPosition: "0 0, 0 6px, 6px -6px, -6px 0px",
@@ -2149,9 +2149,9 @@ function FailurePanel({
   };
   details?: FailureDetails;
 }) {
-  const ink = "var(--ink, #0A0A0A)";
-  const hair = "rgba(10,10,10,0.20)";
-  const accent = "var(--accent, #8B1A1A)";
+  const ink = "var(--ink, #030957)";
+  const hair = "rgba(3,9,87,0.20)";
+  const accent = "var(--accent, #ffb900)";
   const mono = "'Courier Prime', 'JetBrains Mono', monospace";
   const display = "'Cormorant Garamond', Georgia, serif";
   const body = "'Libre Baskerville', Georgia, serif";
@@ -2361,7 +2361,7 @@ function FailurePanel({
               onMouseEnter={(e) => {
                 if (urlEditor.busy || !urlEditor.value.trim()) return;
                 e.currentTarget.style.background = ink;
-                e.currentTarget.style.color = "#F4EFE6";
+                e.currentTarget.style.color = "#f8f8f8";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
@@ -2437,7 +2437,7 @@ function FailurePanel({
             onMouseEnter={(e) => {
               if (primaryBusy) return;
               e.currentTarget.style.background = ink;
-              e.currentTarget.style.color = "#F4EFE6";
+              e.currentTarget.style.color = "#f8f8f8";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "transparent";

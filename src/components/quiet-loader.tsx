@@ -23,7 +23,7 @@ export function QuietLoader({ label = "Loading", className }: { label?: string; 
           height: 6px;
           border-radius: 999px;
           background: currentColor;
-          color: rgba(10,10,10,0.55);
+          color: rgba(3,9,87,0.55);
           opacity: 0.25;
           animation: quietPulse 1.2s ease-in-out infinite;
         }

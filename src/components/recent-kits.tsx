@@ -107,9 +107,9 @@ export function RecentKits() {
                   className="recent-mark"
                   style={{
                     background: k.primaryHex
-                      ? `color-mix(in oklab, ${k.primaryHex} 8%, #F4EFE6)`
-                      : "rgba(10,10,10,0.04)",
-                    borderLeft: `3px solid ${k.primaryHex ?? "#0A0A0A"}`,
+                      ? `color-mix(in oklab, ${k.primaryHex} 8%, #f8f8f8)`
+                      : "rgba(3,9,87,0.04)",
+                    borderLeft: `3px solid ${k.primaryHex ?? "#030957"}`,
                   }}
                 >
                   {k.logoUrl ? (
@@ -120,7 +120,7 @@ export function RecentKits() {
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
                         fontSize: 22,
-                        color: k.primaryHex ?? "#0A0A0A",
+                        color: k.primaryHex ?? "#030957",
                       }}
                     >
                       {(k.name?.[0] ?? "?").toUpperCase()}
@@ -177,7 +177,7 @@ export function RecentKits() {
 
 const css = `
   .recent-kits {
-    border-top: 1px solid rgba(10,10,10,0.20);
+    border-top: 1px solid rgba(3,9,87,0.20);
     padding: 56px 40px 96px;
     max-width: 760px;
     margin: 0 auto;
@@ -195,7 +195,7 @@ const css = `
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(10,10,10,0.55);
+    color: rgba(3,9,87,0.55);
     margin: 0;
   }
   .recent-all {
@@ -203,12 +203,12 @@ const css = `
     font-size: 11px;
     letter-spacing: 0.20em;
     text-transform: uppercase;
-    color: #0A0A0A;
+    color: #030957;
     text-decoration: none;
     opacity: 0.75;
     transition: opacity 150ms ease, color 150ms ease;
   }
-  .recent-all:hover { opacity: 1; color: #8B1A1A; }
+  .recent-all:hover { opacity: 1; color: #ffb900; }
 
   .recent-search {
     position: relative;
@@ -221,7 +221,7 @@ const css = `
     transform: translateY(-50%);
     width: 14px;
     height: 14px;
-    color: rgba(10,10,10,0.45);
+    color: rgba(3,9,87,0.45);
     pointer-events: none;
   }
   .recent-search input {
@@ -229,24 +229,24 @@ const css = `
     height: 42px;
     padding: 0 16px 0 40px;
     border-radius: 9999px;
-    border: 1px solid rgba(10,10,10,0.15);
+    border: 1px solid rgba(3,9,87,0.15);
     background: rgba(244,239,230,0.6);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     font-family: 'Courier Prime', monospace;
     font-size: 12px;
     letter-spacing: 0.06em;
-    color: #0A0A0A;
+    color: #030957;
     outline: none;
     transition: border-color 150ms ease, background 150ms ease;
   }
   .recent-search input::placeholder {
-    color: rgba(10,10,10,0.45);
+    color: rgba(3,9,87,0.45);
     text-transform: none;
     letter-spacing: 0.04em;
   }
   .recent-search input:focus {
-    border-color: rgba(10,10,10,0.4);
+    border-color: rgba(3,9,87,0.4);
     background: rgba(244,239,230,0.85);
   }
 
@@ -254,7 +254,7 @@ const css = `
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
     font-size: 14px;
-    color: rgba(10,10,10,0.6);
+    color: rgba(3,9,87,0.6);
     margin: 0;
     padding: 12px 0;
   }
@@ -265,7 +265,7 @@ const css = `
     padding: 0;
   }
   .recent-list li + li {
-    border-top: 1px solid rgba(10,10,10,0.10);
+    border-top: 1px solid rgba(3,9,87,0.10);
   }
   .recent-row {
     display: flex;
@@ -273,11 +273,11 @@ const css = `
     gap: 16px;
     padding: 14px 4px;
     text-decoration: none;
-    color: #0A0A0A;
+    color: #030957;
     transition: background 200ms ease;
     border-radius: 12px;
   }
-  .recent-row:hover { background: rgba(10,10,10,0.03); }
+  .recent-row:hover { background: rgba(3,9,87,0.03); }
 
   .recent-mark {
     flex: 0 0 auto;
@@ -287,7 +287,7 @@ const css = `
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border: 1px solid rgba(10,10,10,0.12);
+    border: 1px solid rgba(3,9,87,0.12);
     border-radius: 6px;
   }
   .recent-mark img {
@@ -307,7 +307,7 @@ const css = `
     font-size: 22px;
     font-weight: 500;
     line-height: 1.15;
-    color: #0A0A0A;
+    color: #030957;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -317,7 +317,7 @@ const css = `
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(10,10,10,0.5);
+    color: rgba(3,9,87,0.5);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -330,7 +330,7 @@ const css = `
   .recent-pal span {
     width: 14px;
     height: 14px;
-    border: 1px solid rgba(10,10,10,0.12);
+    border: 1px solid rgba(3,9,87,0.12);
   }
 
   @media (max-width: 640px) {

@@ -23,7 +23,7 @@ const REMOVE_PROMPT = `Remove the "Start Here" button from the navbar and delete
 
 function StartHerePage() {
   return (
-    <div style={{ background: "#F4EFE6", color: "#0A0A0A", minHeight: "100vh" }}>
+    <div style={{ background: "#f8f8f8", color: "#030957", minHeight: "100vh" }}>
       <SiteHeader />
       <main className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-24">
         <Eyebrow>// Template guide</Eyebrow>
@@ -93,7 +93,7 @@ function StartHerePage() {
             button and this page. Paste this into the Lovable chat:
           </P>
           <PromptBlock text={REMOVE_PROMPT} />
-          <P style={{ marginTop: 16, fontSize: 13, color: "rgba(10,10,10,0.6)" }}>
+          <P style={{ marginTop: 16, fontSize: 13, color: "rgba(3,9,87,0.6)" }}>
             You can always restore it later by asking Lovable to add a
             Start Here page back.
           </P>
@@ -109,9 +109,9 @@ function StartHerePage() {
               fontSize: 11,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#0A0A0A",
+              color: "#030957",
               textDecoration: "none",
-              borderBottom: "1px solid #0A0A0A",
+              borderBottom: "1px solid #030957",
               paddingBottom: 2,
             }}
           >
@@ -123,7 +123,7 @@ function StartHerePage() {
               fontSize: 10,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: "rgba(10,10,10,0.45)",
+              color: "rgba(3,9,87,0.45)",
             }}
           >
             Brand Kit / v1.0
@@ -142,7 +142,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
         fontSize: 11,
         letterSpacing: "0.28em",
         textTransform: "uppercase",
-        color: "rgba(10,10,10,0.55)",
+        color: "rgba(3,9,87,0.55)",
       }}
     >
       {children}
@@ -155,7 +155,7 @@ function Divider() {
     <hr
       style={{
         border: 0,
-        borderTop: "1px solid rgba(10,10,10,0.2)",
+        borderTop: "1px solid rgba(3,9,87,0.2)",
         margin: "56px 0",
       }}
     />
@@ -186,7 +186,7 @@ function Section({
             fontFamily: "'Courier Prime', monospace",
             fontSize: 11,
             letterSpacing: "0.18em",
-            color: "rgba(10,10,10,0.55)",
+            color: "rgba(3,9,87,0.55)",
           }}
         >
           {number}
@@ -221,7 +221,7 @@ function P({
         fontFamily: "'Libre Baskerville', serif",
         fontSize: 15,
         lineHeight: 1.65,
-        color: "rgba(10,10,10,0.82)",
+        color: "rgba(3,9,87,0.82)",
         margin: "12px 0",
         ...style,
       }}
@@ -237,7 +237,7 @@ function Mono({ children }: { children: React.ReactNode }) {
       style={{
         fontFamily: "'Courier Prime', monospace",
         fontSize: 13,
-        background: "rgba(10,10,10,0.06)",
+        background: "rgba(3,9,87,0.06)",
         padding: "2px 6px",
       }}
     >
@@ -254,7 +254,7 @@ function SubHeading({ children }: { children: React.ReactNode }) {
         fontSize: 11,
         letterSpacing: "0.22em",
         textTransform: "uppercase",
-        color: "rgba(10,10,10,0.55)",
+        color: "rgba(3,9,87,0.55)",
         margin: "28px 0 4px",
       }}
     >
@@ -273,8 +273,8 @@ function FirecrawlCard() {
         alignItems: "center",
         gap: 14,
         padding: "14px 16px",
-        border: "1px solid rgba(10,10,10,0.2)",
-        background: "#F9F6F0",
+        border: "1px solid rgba(3,9,87,0.2)",
+        background: "#ffffff",
       }}
     >
       <div
@@ -284,7 +284,7 @@ function FirecrawlCard() {
           height: 36,
           display: "grid",
           placeItems: "center",
-          background: "#0A0A0A",
+          background: "#030957",
           color: "#FF6B35",
           fontFamily: "'Courier Prime', monospace",
           fontSize: 20,
@@ -300,7 +300,7 @@ function FirecrawlCard() {
             fontSize: 22,
             fontWeight: 600,
             lineHeight: 1,
-            color: "#0A0A0A",
+            color: "#030957",
           }}
         >
           Firecrawl
@@ -311,7 +311,7 @@ function FirecrawlCard() {
             fontSize: 10,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
-            color: "rgba(10,10,10,0.55)",
+            color: "rgba(3,9,87,0.55)",
           }}
         >
           Web scraping · 500 free credits
@@ -329,7 +329,7 @@ function Step({ n, text }: { n: string; text: string }) {
         gridTemplateColumns: "32px 1fr",
         gap: 12,
         padding: "12px 0",
-        borderBottom: "1px solid rgba(10,10,10,0.12)",
+        borderBottom: "1px solid rgba(3,9,87,0.12)",
         alignItems: "baseline",
       }}
     >
@@ -337,7 +337,7 @@ function Step({ n, text }: { n: string; text: string }) {
         style={{
           fontFamily: "'Courier Prime', monospace",
           fontSize: 11,
-          color: "rgba(10,10,10,0.55)",
+          color: "rgba(3,9,87,0.55)",
           letterSpacing: "0.14em",
         }}
       >
@@ -348,7 +348,7 @@ function Step({ n, text }: { n: string; text: string }) {
           fontFamily: "'Libre Baskerville', serif",
           fontSize: 15,
           lineHeight: 1.55,
-          color: "#0A0A0A",
+          color: "#030957",
         }}
       >
         {text}
@@ -372,8 +372,8 @@ function PromptBlock({ text }: { text: string }) {
     <div
       style={{
         marginTop: 16,
-        border: "1px solid rgba(10,10,10,0.2)",
-        background: "#EDE8DE",
+        border: "1px solid rgba(3,9,87,0.2)",
+        background: "#f1f1f4",
       }}
     >
       <div
@@ -382,12 +382,12 @@ function PromptBlock({ text }: { text: string }) {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "8px 14px",
-          borderBottom: "1px solid rgba(10,10,10,0.12)",
+          borderBottom: "1px solid rgba(3,9,87,0.12)",
           fontFamily: "'Courier Prime', monospace",
           fontSize: 10,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: "rgba(10,10,10,0.55)",
+          color: "rgba(3,9,87,0.55)",
         }}
       >
         <span>Prompt — copy into Lovable chat</span>
@@ -405,7 +405,7 @@ function PromptBlock({ text }: { text: string }) {
             fontSize: 10,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: copied ? "#1f6b3a" : "#0A0A0A",
+            color: copied ? "#1f6b3a" : "#030957",
           }}
         >
           {copied ? (
@@ -426,7 +426,7 @@ function PromptBlock({ text }: { text: string }) {
           fontFamily: "'Courier Prime', monospace",
           fontSize: 13,
           lineHeight: 1.55,
-          color: "#0A0A0A",
+          color: "#030957",
           whiteSpace: "pre-wrap",
           wordBreak: "break-word",
         }}

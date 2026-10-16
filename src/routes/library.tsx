@@ -196,7 +196,7 @@ function LibraryPage() {
         {kits.length > 0 && (
           <div
             className="mb-6 flex items-center justify-between border-y py-3"
-            style={{ borderColor: "rgba(10,10,10,0.20)" }}
+            style={{ borderColor: "rgba(3,9,87,0.20)" }}
           >
             <div className="flex items-center gap-5">
               <button
@@ -230,7 +230,7 @@ function LibraryPage() {
               <button
                 type="button"
                 onClick={onBulkDelete}
-                className={`${mono} text-[#8B1A1A] hover:opacity-70 transition-opacity`}
+                className={`${mono} text-[#ffb900] hover:opacity-70 transition-opacity`}
               >
                 [ Delete {selected.size} ]
               </button>
@@ -243,7 +243,7 @@ function LibraryPage() {
         ) : kits.length === 0 ? (
           <div
             className="border border-dashed p-20 text-center"
-            style={{ borderColor: "rgba(10,10,10,0.20)" }}
+            style={{ borderColor: "rgba(3,9,87,0.20)" }}
           >
             <p className={`${eyebrow}`}>// empty</p>
             <p
@@ -252,7 +252,7 @@ function LibraryPage() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: "italic",
                 fontSize: 28,
-                color: "rgba(10,10,10,0.7)",
+                color: "rgba(3,9,87,0.7)",
               }}
             >
               No kits yet.
@@ -265,7 +265,7 @@ function LibraryPage() {
             </Link>
           </div>
         ) : (
-          <ul className="divide-y" style={{ borderColor: "rgba(10,10,10,0.20)" }}>
+          <ul className="divide-y" style={{ borderColor: "rgba(3,9,87,0.20)" }}>
             {kits.map((k) => {
               const isEditing = editingId === k.id;
               const isSelected = selected.has(k.id);
@@ -274,8 +274,8 @@ function LibraryPage() {
                   key={k.id}
                   className="group flex items-center gap-6 py-7 transition-colors cursor-pointer"
                   style={{
-                    borderBottom: "1px solid rgba(10,10,10,0.08)",
-                    background: isSelected ? "rgba(10,10,10,0.03)" : undefined,
+                    borderBottom: "1px solid rgba(3,9,87,0.08)",
+                    background: isSelected ? "rgba(3,9,87,0.03)" : undefined,
                   }}
                   onClick={(e) => {
                     if (isEditing) return;
@@ -303,9 +303,9 @@ function LibraryPage() {
                         aria-hidden
                         className="flex h-5 w-5 items-center justify-center border transition-colors"
                         style={{
-                          borderColor: isSelected ? "#0A0A0A" : "rgba(10,10,10,0.30)",
-                          background: isSelected ? "#0A0A0A" : "transparent",
-                          color: "#F4EFE6",
+                          borderColor: isSelected ? "#030957" : "rgba(3,9,87,0.30)",
+                          background: isSelected ? "#030957" : "transparent",
+                          color: "#f8f8f8",
                           fontSize: 12,
                         }}
                       >
@@ -322,10 +322,10 @@ function LibraryPage() {
                     className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden transition-opacity hover:opacity-80"
                     style={{
                       background: k.primaryHex
-                        ? `color-mix(in oklab, ${k.primaryHex} 8%, #F4EFE6)`
-                        : "rgba(10,10,10,0.04)",
-                      border: "1px solid rgba(10,10,10,0.12)",
-                      borderLeft: `3px solid ${k.primaryHex ?? "#0A0A0A"}`,
+                        ? `color-mix(in oklab, ${k.primaryHex} 8%, #f8f8f8)`
+                        : "rgba(3,9,87,0.04)",
+                      border: "1px solid rgba(3,9,87,0.12)",
+                      borderLeft: `3px solid ${k.primaryHex ?? "#030957"}`,
                     }}
                   >
                     {k.logoUrl ? (
@@ -342,7 +342,7 @@ function LibraryPage() {
                           fontFamily: "'Cormorant Garamond', serif",
                           fontSize: 28,
                           fontWeight: 500,
-                          color: k.primaryHex ?? "#0A0A0A",
+                          color: k.primaryHex ?? "#030957",
                           lineHeight: 1,
                         }}
                       >
@@ -415,7 +415,7 @@ function LibraryPage() {
                               className="h-3.5 w-3.5"
                               style={{
                                 background: hex,
-                                border: "1px solid rgba(10,10,10,0.12)",
+                                border: "1px solid rgba(3,9,87,0.12)",
                               }}
                               title={hex}
                             />
@@ -460,7 +460,7 @@ function LibraryPage() {
                       </button>
                       <button
                         type="button"
-                        className="text-[#8B1A1A] hover:opacity-70 transition-opacity"
+                        className="text-[#ffb900] hover:opacity-70 transition-opacity"
                         onClick={() => onDelete(k)}
                       >
                         Delete

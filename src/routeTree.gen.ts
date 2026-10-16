@@ -12,9 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DesignRouteImport } from './routes/design'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as ShortenRouteImport } from './routes/shorten'
 import { Route as StartHereRouteImport } from './routes/start-here'
 import { Route as DesignHistoryRouteImport } from './routes/design.history'
 import { Route as KitKitIdRouteImport } from './routes/kit.$kitId'
+import { Route as SCodeRouteImport } from './routes/s/$code'
 import { Route as ShareShareTokenRouteImport } from './routes/share.$shareToken'
 import { Route as DesignHistoryDiffRouteImport } from './routes/design.history.diff'
 
@@ -33,6 +35,11 @@ const LibraryRoute = LibraryRouteImport.update({
   path: '/library',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShortenRoute = ShortenRouteImport.update({
+  id: '/shorten',
+  path: '/shorten',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StartHereRoute = StartHereRouteImport.update({
   id: '/start-here',
   path: '/start-here',
@@ -46,6 +53,11 @@ const DesignHistoryRoute = DesignHistoryRouteImport.update({
 const KitKitIdRoute = KitKitIdRouteImport.update({
   id: '/kit/$kitId',
   path: '/kit/$kitId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SCodeRoute = SCodeRouteImport.update({
+  id: '/s/$code',
+  path: '/s/$code',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShareShareTokenRoute = ShareShareTokenRouteImport.update({
@@ -63,9 +75,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/design': typeof DesignRouteWithChildren
   '/library': typeof LibraryRoute
+  '/shorten': typeof ShortenRoute
   '/start-here': typeof StartHereRoute
   '/design/history': typeof DesignHistoryRouteWithChildren
   '/kit/$kitId': typeof KitKitIdRoute
+  '/s/$code': typeof SCodeRoute
   '/share/$shareToken': typeof ShareShareTokenRoute
   '/design/history/diff': typeof DesignHistoryDiffRoute
 }
@@ -73,9 +87,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/design': typeof DesignRouteWithChildren
   '/library': typeof LibraryRoute
+  '/shorten': typeof ShortenRoute
   '/start-here': typeof StartHereRoute
   '/design/history': typeof DesignHistoryRouteWithChildren
   '/kit/$kitId': typeof KitKitIdRoute
+  '/s/$code': typeof SCodeRoute
   '/share/$shareToken': typeof ShareShareTokenRoute
   '/design/history/diff': typeof DesignHistoryDiffRoute
 }
@@ -84,9 +100,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/design': typeof DesignRouteWithChildren
   '/library': typeof LibraryRoute
+  '/shorten': typeof ShortenRoute
   '/start-here': typeof StartHereRoute
   '/design/history': typeof DesignHistoryRouteWithChildren
   '/kit/$kitId': typeof KitKitIdRoute
+  '/s/$code': typeof SCodeRoute
   '/share/$shareToken': typeof ShareShareTokenRoute
   '/design/history/diff': typeof DesignHistoryDiffRoute
 }
@@ -96,9 +114,11 @@ export interface FileRouteTypes {
     | '/'
     | '/design'
     | '/library'
+    | '/shorten'
     | '/start-here'
     | '/design/history'
     | '/kit/$kitId'
+    | '/s/$code'
     | '/share/$shareToken'
     | '/design/history/diff'
   fileRoutesByTo: FileRoutesByTo
@@ -106,9 +126,11 @@ export interface FileRouteTypes {
     | '/'
     | '/design'
     | '/library'
+    | '/shorten'
     | '/start-here'
     | '/design/history'
     | '/kit/$kitId'
+    | '/s/$code'
     | '/share/$shareToken'
     | '/design/history/diff'
   id:
@@ -116,9 +138,11 @@ export interface FileRouteTypes {
     | '/'
     | '/design'
     | '/library'
+    | '/shorten'
     | '/start-here'
     | '/design/history'
     | '/kit/$kitId'
+    | '/s/$code'
     | '/share/$shareToken'
     | '/design/history/diff'
   fileRoutesById: FileRoutesById
@@ -127,8 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DesignRoute: typeof DesignRouteWithChildren
   LibraryRoute: typeof LibraryRoute
+  ShortenRoute: typeof ShortenRoute
   StartHereRoute: typeof StartHereRoute
   KitKitIdRoute: typeof KitKitIdRoute
+  SCodeRoute: typeof SCodeRoute
   ShareShareTokenRoute: typeof ShareShareTokenRoute
 }
 
@@ -155,6 +181,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shorten': {
+      id: '/shorten'
+      path: '/shorten'
+      fullPath: '/shorten'
+      preLoaderRoute: typeof ShortenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/start-here': {
       id: '/start-here'
       path: '/start-here'
@@ -174,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/kit/$kitId'
       fullPath: '/kit/$kitId'
       preLoaderRoute: typeof KitKitIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/s/$code': {
+      id: '/s/$code'
+      path: '/s/$code'
+      fullPath: '/s/$code'
+      preLoaderRoute: typeof SCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/share/$shareToken': {
@@ -220,8 +260,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DesignRoute: DesignRouteWithChildren,
   LibraryRoute: LibraryRoute,
+  ShortenRoute: ShortenRoute,
   StartHereRoute: StartHereRoute,
   KitKitIdRoute: KitKitIdRoute,
+  SCodeRoute: SCodeRoute,
   ShareShareTokenRoute: ShareShareTokenRoute,
 }
 export const routeTree = rootRouteImport
