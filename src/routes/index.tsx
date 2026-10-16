@@ -74,7 +74,7 @@ const css = `
   html, body {
     background: var(--washi);
     color: var(--sumi);
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: 'IBM Plex Sans Arabic', Georgia, serif;
     -webkit-font-smoothing: antialiased;
   }
   *::selection { background: var(--sumi); color: var(--washi); }
@@ -100,7 +100,7 @@ const css = `
   }
   .nav { position: relative; }
   .brand {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
@@ -110,7 +110,7 @@ const css = `
   .nav-links {
     display: flex;
     gap: 28px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.20em;
     text-transform: uppercase;
@@ -141,7 +141,7 @@ const css = `
   }
 
   .eyebrow {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -150,7 +150,7 @@ const css = `
   }
 
   .headline {
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    font-family: 'IBM Plex Sans Arabic', 'Times New Roman', serif;
     font-weight: 300;
     font-style: normal;
     font-size: clamp(56px, 9vw, 112px);
@@ -164,7 +164,7 @@ const css = `
   }
 
   .lede {
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: 'IBM Plex Sans Arabic', Georgia, serif;
     font-style: italic;
     font-size: 16px;
     line-height: 1.55;
@@ -181,7 +181,7 @@ const css = `
 
   .foot-meta {
     margin-top: 28px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 10px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
@@ -197,7 +197,7 @@ const css = `
     width: 100%;
   }
   .how-eyebrow {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -219,17 +219,17 @@ const css = `
     gap: 24px;
     padding: 22px 0;
     border-bottom: 1px solid var(--hairline);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'IBM Plex Sans Arabic', serif;
     font-size: 22px;
   }
   .how-list .num {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.18em;
     color: rgba(3,9,87,0.55);
   }
   .how-list .dim {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'IBM Plex Sans Arabic', serif;
     font-style: italic;
     font-size: 14px;
     color: rgba(3,9,87,0.65);

@@ -118,7 +118,7 @@ export function RecentKits() {
                     <span
                       aria-hidden
                       style={{
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "'IBM Plex Sans Arabic', serif",
                         fontSize: 22,
                         color: k.primaryHex ?? "#030957",
                       }}
@@ -140,8 +140,8 @@ export function RecentKits() {
                           google_font: k.displayFont?.google ?? null,
                         });
                         return fam
-                          ? `'${fam}', 'Cormorant Garamond', serif`
-                          : "'Cormorant Garamond', serif";
+                          ? `'${fam}', 'IBM Plex Sans Arabic', serif`
+                          : "'IBM Plex Sans Arabic', serif";
                       })(),
                     }}
                   >
@@ -191,7 +191,7 @@ const css = `
     margin-bottom: 24px;
   }
   .recent-eye {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -199,7 +199,7 @@ const css = `
     margin: 0;
   }
   .recent-all {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.20em;
     text-transform: uppercase;
@@ -233,7 +233,7 @@ const css = `
     background: rgba(244,239,230,0.6);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 12px;
     letter-spacing: 0.06em;
     color: #030957;
@@ -251,7 +251,7 @@ const css = `
   }
 
   .recent-empty {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'IBM Plex Sans Arabic', serif;
     font-style: italic;
     font-size: 14px;
     color: rgba(3,9,87,0.6);
@@ -313,7 +313,7 @@ const css = `
     text-overflow: ellipsis;
   }
   .recent-url {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;

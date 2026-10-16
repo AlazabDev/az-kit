@@ -370,7 +370,7 @@ const panelCss = `
     display: inline-flex;
     align-items: center;
     padding: 0 16px 0 20px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -385,7 +385,7 @@ const panelCss = `
     border: 0;
     outline: 0;
     background: transparent;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 14px;
     color: #030957;
     letter-spacing: 0.02em;
@@ -399,7 +399,7 @@ const panelCss = `
     border: 0;
     background: linear-gradient(180deg, #1a1a1a 0%, #030957 100%);
     color: #f8f8f8;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.22em;
     padding: 0 22px;
@@ -467,14 +467,14 @@ const panelCss = `
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 8px 24px -14px rgba(3,9,87,0.22);
   }
   .ingest-zone-eyebrow {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: rgba(3,9,87,0.55);
   }
   .ingest-zone-title {
-    font-family: 'Cormorant Garamond', 'Fraunces', serif;
+    font-family: 'IBM Plex Sans Arabic', 'Fraunces', serif;
     font-style: italic;
     font-weight: 400;
     font-size: 22px;
@@ -482,7 +482,7 @@ const panelCss = `
     color: #030957;
   }
   .ingest-zone-meta {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -495,7 +495,7 @@ const panelCss = `
     align-items: center;
     gap: 14px;
     flex-wrap: wrap;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -506,7 +506,7 @@ const panelCss = `
     border: 1px solid rgba(3,9,87,0.20);
     background: transparent;
     padding: 6px 10px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.18em;
     color: #030957;
@@ -534,7 +534,7 @@ const panelCss = `
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 12px;
     color: #030957;
   }
@@ -545,7 +545,7 @@ const panelCss = `
     border: 0;
     background: transparent;
     color: rgba(3,9,87,0.55);
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 14px;
     cursor: pointer;
     padding: 0 6px;
@@ -582,14 +582,14 @@ const panelCss = `
     text-align: center;
   }
   .ingest-overlay-eyebrow {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: rgba(3,9,87,0.55);
   }
   .ingest-overlay-title {
-    font-family: 'Cormorant Garamond', 'Fraunces', serif;
+    font-family: 'IBM Plex Sans Arabic', 'Fraunces', serif;
     font-weight: 300;
     font-style: italic;
     font-size: 56px;
@@ -597,7 +597,7 @@ const panelCss = `
     color: #030957;
   }
   .ingest-overlay-meta {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace;
     font-size: 11px;
     letter-spacing: 0.16em;
     text-transform: uppercase;

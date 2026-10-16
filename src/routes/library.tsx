@@ -182,7 +182,7 @@ function LibraryPage() {
           <h1
             className="mt-4"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'IBM Plex Sans Arabic', serif",
               fontWeight: 300,
               fontSize: "clamp(48px, 7vw, 80px)",
               lineHeight: 0.95,
@@ -249,7 +249,7 @@ function LibraryPage() {
             <p
               className="mt-6"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'IBM Plex Sans Arabic', serif",
                 fontStyle: "italic",
                 fontSize: 28,
                 color: "rgba(3,9,87,0.7)",
@@ -339,7 +339,7 @@ function LibraryPage() {
                       <span
                         aria-hidden
                         style={{
-                          fontFamily: "'Cormorant Garamond', serif",
+                          fontFamily: "'IBM Plex Sans Arabic', serif",
                           fontSize: 28,
                           fontWeight: 500,
                           color: k.primaryHex ?? "#030957",
@@ -368,7 +368,7 @@ function LibraryPage() {
                             }
                           }}
                           className="h-auto border-0 px-0 py-0 text-2xl shadow-none focus-visible:ring-0"
-                          style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}
+                          style={{ fontFamily: "'IBM Plex Sans Arabic', serif", fontWeight: 400 }}
                         />
                       ) : (
                         <Link
@@ -384,8 +384,8 @@ function LibraryPage() {
                                 google_font: k.displayFont?.google ?? null,
                               });
                               return fam
-                                ? `'${fam}', 'Cormorant Garamond', serif`
-                                : "'Cormorant Garamond', serif";
+                                ? `'${fam}', 'IBM Plex Sans Arabic', serif`
+                                : "'IBM Plex Sans Arabic', serif";
                             })(),
                             fontWeight: 500,
                             fontSize: 28,

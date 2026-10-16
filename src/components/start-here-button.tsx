@@ -8,7 +8,7 @@ export function StartHereButton() {
       style={{
         background: "#ffb900",
         color: "#030957",
-        fontFamily: "'Courier Prime', monospace",
+        fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
         fontSize: 11,
         letterSpacing: "0.18em",
         textTransform: "uppercase",

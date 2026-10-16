@@ -37,9 +37,9 @@
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   --color-surface-raised: var(--surface-raised);
-  --font-sans: "Libre Baskerville", Georgia, "Times New Roman", serif;
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
-  --font-mono: "Courier Prime", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "IBM Plex Sans Arabic", Georgia, "Times New Roman", serif;
+  --font-display: "IBM Plex Sans Arabic", "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "IBM Plex Sans Arabic", ui-monospace, SFMono-Regular, monospace;
 }
 
 :root {
