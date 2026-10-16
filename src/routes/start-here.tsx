@@ -30,7 +30,7 @@ function StartHerePage() {
         <h1
           className="mt-4"
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'IBM Plex Sans Arabic', serif",
             fontWeight: 300,
             fontSize: "clamp(44px, 6vw, 72px)",
             lineHeight: 1,
@@ -105,7 +105,7 @@ function StartHerePage() {
           <Link
             to="/"
             style={{
-              fontFamily: "'Courier Prime', monospace",
+              fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
               fontSize: 11,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -119,7 +119,7 @@ function StartHerePage() {
           </Link>
           <span
             style={{
-              fontFamily: "'Courier Prime', monospace",
+              fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
               fontSize: 10,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
@@ -138,7 +138,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
-        fontFamily: "'Courier Prime', monospace",
+        fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
         fontSize: 11,
         letterSpacing: "0.28em",
         textTransform: "uppercase",
@@ -183,7 +183,7 @@ function Section({
       >
         <span
           style={{
-            fontFamily: "'Courier Prime', monospace",
+            fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
             fontSize: 11,
             letterSpacing: "0.18em",
             color: "rgba(3,9,87,0.55)",
@@ -193,7 +193,7 @@ function Section({
         </span>
         <h2
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'IBM Plex Sans Arabic', serif",
             fontWeight: 400,
             fontSize: 28,
             margin: 0,
@@ -218,7 +218,7 @@ function P({
   return (
     <p
       style={{
-        fontFamily: "'Libre Baskerville', serif",
+        fontFamily: "'IBM Plex Sans Arabic', serif",
         fontSize: 15,
         lineHeight: 1.65,
         color: "rgba(3,9,87,0.82)",
@@ -235,7 +235,7 @@ function Mono({ children }: { children: React.ReactNode }) {
   return (
     <code
       style={{
-        fontFamily: "'Courier Prime', monospace",
+        fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
         fontSize: 13,
         background: "rgba(3,9,87,0.06)",
         padding: "2px 6px",
@@ -250,7 +250,7 @@ function SubHeading({ children }: { children: React.ReactNode }) {
   return (
     <h3
       style={{
-        fontFamily: "'Courier Prime', monospace",
+        fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
         fontSize: 11,
         letterSpacing: "0.22em",
         textTransform: "uppercase",
@@ -286,7 +286,7 @@ function FirecrawlCard() {
           placeItems: "center",
           background: "#030957",
           color: "#FF6B35",
-          fontFamily: "'Courier Prime', monospace",
+          fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
           fontSize: 20,
           lineHeight: 1,
         }}
@@ -296,7 +296,7 @@ function FirecrawlCard() {
       <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <span
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'IBM Plex Sans Arabic', serif",
             fontSize: 22,
             fontWeight: 600,
             lineHeight: 1,
@@ -307,7 +307,7 @@ function FirecrawlCard() {
         </span>
         <span
           style={{
-            fontFamily: "'Courier Prime', monospace",
+            fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
             fontSize: 10,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
@@ -335,7 +335,7 @@ function Step({ n, text }: { n: string; text: string }) {
     >
       <span
         style={{
-          fontFamily: "'Courier Prime', monospace",
+          fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
           fontSize: 11,
           color: "rgba(3,9,87,0.55)",
           letterSpacing: "0.14em",
@@ -345,7 +345,7 @@ function Step({ n, text }: { n: string; text: string }) {
       </span>
       <span
         style={{
-          fontFamily: "'Libre Baskerville', serif",
+          fontFamily: "'IBM Plex Sans Arabic', serif",
           fontSize: 15,
           lineHeight: 1.55,
           color: "#030957",
@@ -383,7 +383,7 @@ function PromptBlock({ text }: { text: string }) {
           justifyContent: "space-between",
           padding: "8px 14px",
           borderBottom: "1px solid rgba(3,9,87,0.12)",
-          fontFamily: "'Courier Prime', monospace",
+          fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
           fontSize: 10,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
@@ -401,7 +401,7 @@ function PromptBlock({ text }: { text: string }) {
             background: "transparent",
             border: "none",
             cursor: "pointer",
-            fontFamily: "'Courier Prime', monospace",
+            fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
             fontSize: 10,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
@@ -423,7 +423,7 @@ function PromptBlock({ text }: { text: string }) {
         style={{
           margin: 0,
           padding: "14px 16px",
-          fontFamily: "'Courier Prime', monospace",
+          fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
           fontSize: 13,
           lineHeight: 1.55,
           color: "#030957",

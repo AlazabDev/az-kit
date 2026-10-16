@@ -54,7 +54,7 @@ function HistoryPage() {
             <h1
               className="mt-2"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'IBM Plex Sans Arabic', serif",
                 fontSize: "clamp(48px, 7vw, 80px)",
                 lineHeight: 0.95,
                 letterSpacing: "-0.02em",
@@ -149,7 +149,7 @@ function HistoryPage() {
                 <div>
                   <p
                     style={{
-                      fontFamily: "'Cormorant Garamond', serif",
+                      fontFamily: "'IBM Plex Sans Arabic', serif",
                       fontSize: "24px",
                       fontWeight: 600,
                       lineHeight: 1.2,

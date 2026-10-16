@@ -1043,7 +1043,7 @@ function PairingSample({ ratio, fg, bg }: { ratio: number; fg: string; bg: strin
       >
         <span
           className="font-serif text-base leading-none"
-          style={{ color: fg, fontFamily: "'Cormorant Garamond', 'Fraunces', serif" }}
+          style={{ color: fg, fontFamily: "'IBM Plex Sans Arabic', 'Fraunces', serif" }}
         >
           Aa
         </span>
@@ -2152,9 +2152,9 @@ function FailurePanel({
   const ink = "var(--ink, #030957)";
   const hair = "rgba(3,9,87,0.20)";
   const accent = "var(--accent, #ffb900)";
-  const mono = "'Courier Prime', 'JetBrains Mono', monospace";
-  const display = "'Cormorant Garamond', Georgia, serif";
-  const body = "'Libre Baskerville', Georgia, serif";
+  const mono = "'IBM Plex Mono', 'IBM Plex Sans Arabic', 'JetBrains Mono', monospace";
+  const display = "'IBM Plex Sans Arabic', Georgia, serif";
+  const body = "'IBM Plex Sans Arabic', Georgia, serif";
 
   return (
     <div

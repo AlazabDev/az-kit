@@ -96,7 +96,7 @@ function DesignPage() {
             <h1
               className="mt-2"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'IBM Plex Sans Arabic', serif",
                 fontSize: "clamp(48px, 7vw, 80px)",
                 lineHeight: 0.95,
                 letterSpacing: "-0.02em",
@@ -173,7 +173,7 @@ function DesignPage() {
               style={{
                 border: "1px solid #030957",
                 minHeight: "60vh",
-                fontFamily: "'Courier Prime', monospace",
+                fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
               }}
             />
             <div>
@@ -197,7 +197,7 @@ function DesignPage() {
             style={{
               border: "1px solid rgba(3,9,87,0.25)",
               backgroundColor: "var(--surface-raised, var(--surface))",
-              fontFamily: "'Courier Prime', monospace",
+              fontFamily: "'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace",
             }}
           >
             {markdown || "—"}

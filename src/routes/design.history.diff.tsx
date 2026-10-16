@@ -61,7 +61,7 @@ function DiffPage() {
             <h1
               className="mt-2"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'IBM Plex Sans Arabic', serif",
                 fontSize: "clamp(40px, 5vw, 64px)",
                 lineHeight: 0.95,
                 letterSpacing: "-0.02em",
