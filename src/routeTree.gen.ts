@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DesignRouteImport } from './routes/design'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as ShortenRouteImport } from './routes/shorten'
 import { Route as StartHereRouteImport } from './routes/start-here'
 import { Route as DesignHistoryRouteImport } from './routes/design.history'
 import { Route as KitKitIdRouteImport } from './routes/kit.$kitId'
@@ -32,6 +33,11 @@ const DesignRoute = DesignRouteImport.update({
 const LibraryRoute = LibraryRouteImport.update({
   id: '/library',
   path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShortenRoute = ShortenRouteImport.update({
+  id: '/shorten',
+  path: '/shorten',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StartHereRoute = StartHereRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/design': typeof DesignRouteWithChildren
   '/library': typeof LibraryRoute
+  '/shorten': typeof ShortenRoute
   '/start-here': typeof StartHereRoute
   '/design/history': typeof DesignHistoryRouteWithChildren
   '/kit/$kitId': typeof KitKitIdRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/design': typeof DesignRouteWithChildren
   '/library': typeof LibraryRoute
+  '/shorten': typeof ShortenRoute
   '/start-here': typeof StartHereRoute
   '/design/history': typeof DesignHistoryRouteWithChildren
   '/kit/$kitId': typeof KitKitIdRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/design': typeof DesignRouteWithChildren
   '/library': typeof LibraryRoute
+  '/shorten': typeof ShortenRoute
   '/start-here': typeof StartHereRoute
   '/design/history': typeof DesignHistoryRouteWithChildren
   '/kit/$kitId': typeof KitKitIdRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/design'
     | '/library'
+    | '/shorten'
     | '/start-here'
     | '/design/history'
     | '/kit/$kitId'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/design'
     | '/library'
+    | '/shorten'
     | '/start-here'
     | '/design/history'
     | '/kit/$kitId'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/design'
     | '/library'
+    | '/shorten'
     | '/start-here'
     | '/design/history'
     | '/kit/$kitId'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DesignRoute: typeof DesignRouteWithChildren
   LibraryRoute: typeof LibraryRoute
+  ShortenRoute: typeof ShortenRoute
   StartHereRoute: typeof StartHereRoute
   KitKitIdRoute: typeof KitKitIdRoute
   SCodeRoute: typeof SCodeRoute
@@ -166,6 +179,13 @@ declare module '@tanstack/react-router' {
       path: '/library'
       fullPath: '/library'
       preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shorten': {
+      id: '/shorten'
+      path: '/shorten'
+      fullPath: '/shorten'
+      preLoaderRoute: typeof ShortenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/start-here': {
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DesignRoute: DesignRouteWithChildren,
   LibraryRoute: LibraryRoute,
+  ShortenRoute: ShortenRoute,
   StartHereRoute: StartHereRoute,
   KitKitIdRoute: KitKitIdRoute,
   SCodeRoute: SCodeRoute,

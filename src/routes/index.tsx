@@ -41,6 +41,9 @@ function Landing() {
             <Link to="/library">
               <BookOpen aria-hidden /> Library
             </Link>
+            <Link to="/shorten">
+              <Link2 aria-hidden /> Shorten
+            </Link>
           </div>
         </nav>
 

@@ -29,6 +29,10 @@ export function SiteHeader() {
             <BookOpen className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
             Library
           </Link>
+          <Link to="/shorten" className={navLinkClass}>
+            <Link2 className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+            Shorten
+          </Link>
           <Link to="/" className={`${ctaClass} whitespace-nowrap`}>
             New kit
           </Link>
