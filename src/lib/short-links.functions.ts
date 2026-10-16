@@ -46,7 +46,7 @@ export const createShortLink = createServerFn({ method: "POST" })
         .select("id")
         .eq("code", code)
         .maybeSingle();
-      if (existing) throw new Error("هذا الرمز مستخدم already — اختر رمزاً آخر");
+      if (existing) throw new Error("هذا الرمز مستخدم — اختر رمزاً آخر");
     }
 
     const { data: row, error } = await supabase
