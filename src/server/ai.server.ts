@@ -262,7 +262,7 @@ export async function firecrawlScrape(url: string) {
     try {
       const res = await fetch(`${FIRECRAWL_API}/v2/scrape`, {
         method: "POST",
-        headers,
+        headers: headers! satisfies HeadersInit,
         body: JSON.stringify({
           url,
           formats: ["markdown", "rawHtml", "links", "branding", "summary"],
