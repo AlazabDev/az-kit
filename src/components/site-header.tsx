@@ -12,7 +12,7 @@ export function SiteHeader() {
   return (
     <header
       className="sticky top-0 z-30 bg-background"
-      style={{ borderBottom: "1px solid #0A0A0A" }}
+      style={{ borderBottom: "1px solid #030957" }}
     >
       <div className="relative mx-auto flex h-12 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link

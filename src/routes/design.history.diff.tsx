@@ -79,7 +79,7 @@ function DiffPage() {
           </Link>
         </div>
 
-        <div className="mt-2" style={{ borderTop: "1px solid rgba(10,10,10,0.25)" }} />
+        <div className="mt-2" style={{ borderTop: "1px solid rgba(3,9,87,0.25)" }} />
 
         {error ? (
           <p className={mono + " mt-6"} style={{ color: "var(--accent)" }}>
@@ -111,7 +111,7 @@ function DiffPage() {
                 <section key={section.section}>
                   <h2
                     className="font-mono text-[13px] uppercase tracking-[0.18em] pb-3"
-                    style={{ borderBottom: "1px solid #0A0A0A" }}
+                    style={{ borderBottom: "1px solid #030957" }}
                   >
                     {section.section}
                   </h2>
@@ -149,16 +149,16 @@ function DiffRow({ entry }: { entry: DesignDocFieldDiff }) {
   return (
     <li
       className="grid grid-cols-[24px_minmax(160px,_220px)_1fr_120px] items-baseline gap-4 py-3"
-      style={{ borderBottom: "1px solid rgba(10,10,10,0.25)" }}
+      style={{ borderBottom: "1px solid rgba(3,9,87,0.25)" }}
     >
       <span
         className="font-mono text-[14px]"
-        style={{ color: isAccent ? "var(--accent)" : "var(--muted, rgba(10,10,10,0.45))" }}
+        style={{ color: isAccent ? "var(--accent)" : "var(--muted, rgba(3,9,87,0.45))" }}
       >
         {gutterMap[entry.kind]}
       </span>
       <span className={monoCell + " break-words"}>{entry.key}</span>
-      <span className={monoCell + " break-words"} style={{ color: "var(--muted, rgba(10,10,10,0.6))" }}>
+      <span className={monoCell + " break-words"} style={{ color: "var(--muted, rgba(3,9,87,0.6))" }}>
         {entry.kind === "changed" ? (
           <>
             {entry.from} <span style={{ color: "var(--accent)" }}>→</span> {entry.to}
@@ -171,7 +171,7 @@ function DiffRow({ entry }: { entry: DesignDocFieldDiff }) {
       </span>
       <span
         className="font-mono text-[10px] uppercase tracking-[0.18em] text-right"
-        style={{ color: isAccent ? "var(--accent)" : "rgba(10,10,10,0.35)" }}
+        style={{ color: isAccent ? "var(--accent)" : "rgba(3,9,87,0.35)" }}
       >
         {entry.kind === "unchanged" ? "·" : entry.kind}
       </span>

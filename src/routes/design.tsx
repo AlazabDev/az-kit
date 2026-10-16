@@ -35,9 +35,9 @@ const SEED_FALLBACK = `# Brand DNA — Design System Document
 
 ### Light Mode
 \`\`\`
---background:     #F4EFE6
---foreground:     #0A0A0A
---accent:         #8B1A1A
+--background:     #f8f8f8
+--foreground:     #030957
+--accent:         #ffb900
 \`\`\`
 `;
 
@@ -116,7 +116,7 @@ function DesignPage() {
               <button
                 onClick={() => setEditing(true)}
                 className={buttonClass}
-                style={{ border: "1px solid #0A0A0A" }}
+                style={{ border: "1px solid #030957" }}
               >
                 [ Edit ]
               </button>
@@ -136,7 +136,7 @@ function DesignPage() {
 
         <div
           className="mt-2"
-          style={{ borderTop: "1px solid rgba(10,10,10,0.25)" }}
+          style={{ borderTop: "1px solid rgba(3,9,87,0.25)" }}
         />
 
         {error ? (
@@ -163,7 +163,7 @@ function DesignPage() {
               onChange={(e) => setLabel(e.target.value)}
               placeholder="optional label — e.g. tightened contrast"
               className="font-mono text-[13px] bg-transparent px-3 py-2 outline-none"
-              style={{ border: "1px solid #0A0A0A" }}
+              style={{ border: "1px solid #030957" }}
             />
             <textarea
               value={markdown}
@@ -171,7 +171,7 @@ function DesignPage() {
               spellCheck={false}
               className="w-full font-mono text-[13px] leading-[1.6] bg-transparent p-4 outline-none resize-y"
               style={{
-                border: "1px solid #0A0A0A",
+                border: "1px solid #030957",
                 minHeight: "60vh",
                 fontFamily: "'Courier Prime', monospace",
               }}
@@ -182,7 +182,7 @@ function DesignPage() {
                 disabled={busy}
                 className={buttonClass}
                 style={{
-                  border: "1px solid #0A0A0A",
+                  border: "1px solid #030957",
                   backgroundColor: "var(--foreground)",
                   color: "var(--background)",
                 }}
@@ -195,7 +195,7 @@ function DesignPage() {
           <pre
             className="mt-6 whitespace-pre-wrap break-words p-6 text-[13px] leading-[1.6]"
             style={{
-              border: "1px solid rgba(10,10,10,0.25)",
+              border: "1px solid rgba(3,9,87,0.25)",
               backgroundColor: "var(--surface-raised, var(--surface))",
               fontFamily: "'Courier Prime', monospace",
             }}
