@@ -238,21 +238,31 @@ export async function callAIStructured<T>(opts: {
   return JSON.parse(call.function.arguments) as T;
 }
 
-const FIRECRAWL_API = "https://api.firecrawl.dev";
+// Firecrawl is a managed, gateway-backed connection: calls go through the
+// Lovable connector gateway with the project key + connection key.
+const FIRECRAWL_API = "https://connector-gateway.lovable.dev/firecrawl";
+
+function firecrawlHeaders() {
+  const connectionKey = process.env.FIRECRAWL_API_KEY;
+  const gatewayKey = process.env.LOVABLE_API_KEY;
+  if (!connectionKey || !gatewayKey) return null;
+  return {
+    Authorization: `Bearer ${gatewayKey}`,
+    "X-Connection-Api-Key": connectionKey,
+    "Content-Type": "application/json",
+  };
+}
 
 export async function firecrawlScrape(url: string) {
-  const key = process.env.FIRECRAWL_API_KEY;
-  if (!key) return directScrape(url);
+  const headers = firecrawlHeaders();
+  if (!headers) return directScrape(url);
 
   async function apiScrape() {
     const timeout = timeoutSignal(SCRAPE_TIMEOUT_MS);
     try {
       const res = await fetch(`${FIRECRAWL_API}/v2/scrape`, {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${key}`,
-          "Content-Type": "application/json",
-        },
+        headers,
         body: JSON.stringify({
           url,
           formats: ["markdown", "rawHtml", "links", "branding", "summary"],
@@ -283,16 +293,13 @@ export async function firecrawlScrape(url: string) {
 
 // Map a site to discover URLs. Returns up to `limit` links.
 export async function firecrawlMap(url: string, limit = 50): Promise<string[]> {
-  const key = process.env.FIRECRAWL_API_KEY;
-  if (!key) return [];
+  const headers = firecrawlHeaders();
+  if (!headers) return [];
   try {
     const timeout = timeoutSignal(MAP_TIMEOUT_MS);
     const res = await fetch(`${FIRECRAWL_API}/v2/map`, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${key}`,
-        "Content-Type": "application/json",
-      },
+      headers,
       body: JSON.stringify({ url, limit, includeSubdomains: false }),
       signal: timeout.signal,
     }).finally(timeout.clear);
