@@ -8,6 +8,7 @@ import { createKit, warmServer } from "@/lib/kits.functions";
 import { extractKit } from "@/lib/extraction.functions";
 import { uploadBrandSource } from "@/lib/uploads.functions";
 import { ExtractionProgress } from "@/components/extraction-progress";
+import { useLang } from "@/lib/i18n";
 
 const ACCEPT = ".pdf,.png,.jpg,.jpeg,.webp,.svg,image/*,application/pdf";
 const MAX_FILES = 10;
@@ -20,6 +21,7 @@ export function IngestionPanel() {
   const extract = useServerFn(extractKit);
   const upload = useServerFn(uploadBrandSource);
   const warm = useServerFn(warmServer);
+  const { tx } = useLang();
 
   const [url, setUrl] = useState("");
   const [files, setFiles] = useState<File[]>([]);
@@ -68,7 +70,7 @@ export function IngestionPanel() {
     const next: File[] = [];
     for (const f of Array.from(incoming)) {
       if (f.size > MAX_BYTES) {
-        toast.error(`"${f.name}" exceeds 20 MB`);
+        toast.error(`"${f.name}" ${tx("exceeds 20 MB")}`);
         continue;
       }
       next.push(f);
@@ -76,7 +78,7 @@ export function IngestionPanel() {
     setFiles((prev) => {
       const merged = [...prev, ...next].slice(0, MAX_FILES);
       if (prev.length + next.length > MAX_FILES) {
-        toast.error(`Max ${MAX_FILES} files`);
+        toast.error(tx("Max 10 files"));
       }
       return merged;
     });
@@ -119,13 +121,13 @@ export function IngestionPanel() {
   useEffect(() => {
     if (!busy) return;
     const cycle = [
-      "Reading source",
-      "Sampling palette",
-      "Reading type",
-      "Listening for voice",
-      "Collecting marks",
-      "Inferring tokens",
-      "Composing kit",
+      tx("Reading source"),
+      tx("Sampling palette"),
+      tx("Reading type"),
+      tx("Listening for voice"),
+      tx("Collecting marks"),
+      tx("Inferring tokens"),
+      tx("Composing kit"),
     ];
     setStage(cycle[0]);
     let i = 0;
@@ -145,14 +147,14 @@ export function IngestionPanel() {
     e?.preventDefault();
     if (busy) return;
     if (!ready) {
-      toast.error("Initializing — one moment");
+      toast.error(tx("Initializing — one moment"));
       return;
     }
     const trimmed = url.trim();
     const hasUrl = trimmed.length > 0;
     const hasFiles = files.length > 0;
     if (!hasUrl && !hasFiles) {
-      toast.error("Paste a URL or drop a file");
+      toast.error(tx("Paste a URL or drop a file"));
       return;
     }
     signalIntent();
@@ -162,13 +164,13 @@ export function IngestionPanel() {
       try {
         new URL(normUrl);
       } catch {
-        toast.error("Invalid URL");
+        toast.error(tx("Invalid URL"));
         return;
       }
     }
 
     setBusy(true);
-    setStage(hasFiles ? "Uploading sources" : "Creating kit");
+    setStage(hasFiles ? tx("Uploading sources") : tx("Creating kit"));
     try {
       const sourceType: "url" | "upload" | "mixed" =
         hasUrl && hasFiles ? "mixed" : hasUrl ? "url" : "upload";
@@ -188,22 +190,22 @@ export function IngestionPanel() {
         pdfTexts = res.pdfTexts.length ? res.pdfTexts : undefined;
       }
 
-      setStage("Extracting brand");
+      setStage(tx("Extracting brand"));
       const extracted = await extract({
         data: { kitId: id, ownerToken, url: normUrl, imageUrls, pdfTexts },
       });
       if (!extracted.ok) {
-        throw new Error(extracted.error ?? "Extraction failed");
+        throw new Error(extracted.error ?? tx("Extraction failed"));
       }
       if ("degraded" in extracted && extracted.degraded) {
-        toast.warning(extracted.degradedReason ?? "Site could not be read — kit uses generic defaults.", {
+        toast.warning(extracted.degradedReason ?? tx("Site could not be read — kit uses generic defaults."), {
           duration: 12000,
         });
       }
       navigate({ to: "/kit/$kitId", params: { kitId: id } });
 
     } catch (err: any) {
-      toast.error(err?.message ?? "Extraction failed");
+      toast.error(err?.message ?? tx("Extraction failed"));
     } finally {
       setBusy(false);
       setStage("");
@@ -214,7 +216,7 @@ export function IngestionPanel() {
     <>
       <style>{panelCss}</style>
 
-      <form className="ingest" onSubmit={submit} aria-label="Brand ingestion">
+      <form className="ingest" onSubmit={submit} aria-label={tx("Brand ingestion")}>
         <div className="ingest-row">
           <span className="ingest-prefix" aria-hidden="true">URL /</span>
           <input
@@ -222,7 +224,7 @@ export function IngestionPanel() {
             inputMode="url"
             autoComplete="off"
             spellCheck={false}
-            placeholder="paste any website"
+            placeholder={tx("paste any website")}
             value={url}
             onChange={(e) => {
               signalIntent();
@@ -231,9 +233,9 @@ export function IngestionPanel() {
             onFocus={signalIntent}
             disabled={busy || !ready}
             className="ingest-input"
-            aria-label="Website URL"
+            aria-label={tx("Website URL")}
           />
-          <button type="submit" className="ingest-go" disabled={busy || !ready} aria-label="Extract">
+          <button type="submit" className="ingest-go" disabled={busy || !ready} aria-label={tx("Extract")}>
             {!ready ? (
               <span className="ingest-go-label is-busy">
                 [ INITIALIZING<span className="ingest-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span> ]
@@ -250,7 +252,7 @@ export function IngestionPanel() {
 
         {busy && (
           <div className="ingest-progress">
-            <ExtractionProgress variant="panel" hint="Usually 15–30 seconds" />
+            <ExtractionProgress variant="panel" hint={tx("Usually 15–30 seconds")} />
           </div>
         )}
 
@@ -277,14 +279,14 @@ export function IngestionPanel() {
             setZoneHover(false);
             if (e.dataTransfer.files?.length) addFiles(e.dataTransfer.files);
           }}
-          aria-label="Drop assets or click to browse"
+          aria-label={tx("Drop assets or click to browse")}
         >
-          <span className="ingest-zone-eyebrow">// drop zone</span>
+          <span className="ingest-zone-eyebrow">{tx("// drop zone")}</span>
           <span className="ingest-zone-title">
-            Drag &amp; drop a deck, logo, screenshot, or PDF
+            {tx("Drag & drop a deck, logo, screenshot, or PDF")}
           </span>
           <span className="ingest-zone-meta">
-            — or <u>click to browse</u> · PDF · PNG · JPG · WEBP · SVG · 20 MB each
+            {tx("— or click to browse · PDF · PNG · JPG · WEBP · SVG · 20 MB each")}
           </span>
           <input
             ref={inputRef}
@@ -322,10 +324,10 @@ export function IngestionPanel() {
       {dragActive && (
         <div className="ingest-overlay" aria-hidden="true">
           <div className="ingest-overlay-card">
-            <span className="ingest-overlay-eyebrow">// drop to ingest</span>
-            <span className="ingest-overlay-title">Release file</span>
+            <span className="ingest-overlay-eyebrow">{tx("// drop to ingest")}</span>
+            <span className="ingest-overlay-title">{tx("Release file")}</span>
             <span className="ingest-overlay-meta">
-              PDF · PNG · JPG · WEBP · SVG — max {MAX_FILES} files, 20 MB each
+              {tx("PDF · PNG · JPG · WEBP · SVG — max 10 files, 20 MB each")}
             </span>
           </div>
         </div>

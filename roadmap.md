@@ -1,5 +1,6 @@
 # Roadmap
 
-- [x] Rebrand colors to Al-Azab identity
-- [x] URL shortener: table + /s/<code> redirect + /shorten admin UI
-- [ ] Connect kit.alazab.com subdomain (needs user action: domain connection) — then serve codes at root /<code> instead of /s/<code>
+- [ ] إكمال ترجمة جميع نصوص الواجهة إلى العربية (Arabic default)
+- [ ] إزالة الرابط الفارغ المخفي بجوار زر اللغة في الصفحة الرئيسية
+- [ ] التحقق من عمل RTL وتبديل اللغة (Playwright)
+- [ ] ميزة جديدة: توليد قوالب عروض تقديمية/تطبيقات من دليل الهوية عبر AI Gateway

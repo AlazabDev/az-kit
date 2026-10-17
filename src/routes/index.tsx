@@ -39,8 +39,6 @@ function Landing() {
               <Link2 aria-hidden /> {t("shorten")}
             </Link>
             <LanguageToggle className="lang-toggle" />
-            <Link to="/" style={{display:"none"}}>
-            </Link>
           </div>
         </nav>
 
