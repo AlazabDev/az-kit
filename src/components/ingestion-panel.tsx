@@ -8,6 +8,7 @@ import { createKit, warmServer } from "@/lib/kits.functions";
 import { extractKit } from "@/lib/extraction.functions";
 import { uploadBrandSource } from "@/lib/uploads.functions";
 import { ExtractionProgress } from "@/components/extraction-progress";
+import { useLang } from "@/lib/i18n";
 
 const ACCEPT = ".pdf,.png,.jpg,.jpeg,.webp,.svg,image/*,application/pdf";
 const MAX_FILES = 10;
@@ -20,6 +21,7 @@ export function IngestionPanel() {
   const extract = useServerFn(extractKit);
   const upload = useServerFn(uploadBrandSource);
   const warm = useServerFn(warmServer);
+  const { tx } = useLang();
 
   const [url, setUrl] = useState("");
   const [files, setFiles] = useState<File[]>([]);
