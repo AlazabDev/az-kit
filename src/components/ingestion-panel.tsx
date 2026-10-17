@@ -121,13 +121,13 @@ export function IngestionPanel() {
   useEffect(() => {
     if (!busy) return;
     const cycle = [
-      "Reading source",
-      "Sampling palette",
-      "Reading type",
-      "Listening for voice",
-      "Collecting marks",
-      "Inferring tokens",
-      "Composing kit",
+      tx("Reading source"),
+      tx("Sampling palette"),
+      tx("Reading type"),
+      tx("Listening for voice"),
+      tx("Collecting marks"),
+      tx("Inferring tokens"),
+      tx("Composing kit"),
     ];
     setStage(cycle[0]);
     let i = 0;
@@ -147,14 +147,14 @@ export function IngestionPanel() {
     e?.preventDefault();
     if (busy) return;
     if (!ready) {
-      toast.error("Initializing — one moment");
+      toast.error(tx("Initializing — one moment"));
       return;
     }
     const trimmed = url.trim();
     const hasUrl = trimmed.length > 0;
     const hasFiles = files.length > 0;
     if (!hasUrl && !hasFiles) {
-      toast.error("Paste a URL or drop a file");
+      toast.error(tx("Paste a URL or drop a file"));
       return;
     }
     signalIntent();
@@ -164,13 +164,13 @@ export function IngestionPanel() {
       try {
         new URL(normUrl);
       } catch {
-        toast.error("Invalid URL");
+        toast.error(tx("Invalid URL"));
         return;
       }
     }
 
     setBusy(true);
-    setStage(hasFiles ? "Uploading sources" : "Creating kit");
+    setStage(hasFiles ? tx("Uploading sources") : tx("Creating kit"));
     try {
       const sourceType: "url" | "upload" | "mixed" =
         hasUrl && hasFiles ? "mixed" : hasUrl ? "url" : "upload";
@@ -190,22 +190,22 @@ export function IngestionPanel() {
         pdfTexts = res.pdfTexts.length ? res.pdfTexts : undefined;
       }
 
-      setStage("Extracting brand");
+      setStage(tx("Extracting brand"));
       const extracted = await extract({
         data: { kitId: id, ownerToken, url: normUrl, imageUrls, pdfTexts },
       });
       if (!extracted.ok) {
-        throw new Error(extracted.error ?? "Extraction failed");
+        throw new Error(extracted.error ?? tx("Extraction failed"));
       }
       if ("degraded" in extracted && extracted.degraded) {
-        toast.warning(extracted.degradedReason ?? "Site could not be read — kit uses generic defaults.", {
+        toast.warning(extracted.degradedReason ?? tx("Site could not be read — kit uses generic defaults."), {
           duration: 12000,
         });
       }
       navigate({ to: "/kit/$kitId", params: { kitId: id } });
 
     } catch (err: any) {
-      toast.error(err?.message ?? "Extraction failed");
+      toast.error(err?.message ?? tx("Extraction failed"));
     } finally {
       setBusy(false);
       setStage("");
