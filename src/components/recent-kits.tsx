@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { readKitsCache } from "@/lib/kits-cache";
 import { useAutoImportFonts, renderFamilyFor } from "@/lib/font-loader";
+import { useLang } from "@/lib/i18n";
 
 type Kit = {
   id: string;
@@ -27,6 +28,7 @@ export function RecentKits() {
   const [kits, setKits] = useState<Kit[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [q, setQ] = useState("");
+  const { tx } = useLang();
 
   useEffect(() => {
     // Landing never starts a Library fetch. First extraction must own the first
@@ -70,9 +72,9 @@ export function RecentKits() {
   return (
     <section className="recent-kits">
       <div className="recent-head">
-        <p className="recent-eye">// recent kits</p>
+        <p className="recent-eye">{tx("// recent kits")}</p>
         <Link to="/library" className="recent-all">
-          [ All brand kits → ]
+          {tx("[ All brand kits → ]")}
         </Link>
       </div>
 
@@ -82,13 +84,13 @@ export function RecentKits() {
           type="text"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search your kits…"
-          aria-label="Search your kits"
+          placeholder={tx("Search your kits…")}
+          aria-label={tx("Search your kits")}
         />
       </div>
 
       {filtered.length === 0 ? (
-        <p className="recent-empty">No kits match "{q}".</p>
+        <p className="recent-empty">{tx("No kits match")} "{q}".</p>
       ) : (
         <ul className="recent-list">
           {filtered.map((k, i) => (

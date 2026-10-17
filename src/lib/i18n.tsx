@@ -68,6 +68,7 @@ const arStrings: Record<string, string> = {
   "[ All brand kits → ]": "[ كل عدّات الهوية ← ]",
   "Search your kits…": "ابحث في عدّاتك…",
   "Search your kits": "ابحث في عدّاتك",
+  "No kits match": "لا توجد عدّات تطابق",
   // library
   "// library": "// المكتبة",
   "Your brand kits.": "عدّات الهوية الخاصة بك.",
