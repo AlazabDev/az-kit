@@ -216,7 +216,7 @@ export function IngestionPanel() {
     <>
       <style>{panelCss}</style>
 
-      <form className="ingest" onSubmit={submit} aria-label="Brand ingestion">
+      <form className="ingest" onSubmit={submit} aria-label={tx("Brand ingestion")}>
         <div className="ingest-row">
           <span className="ingest-prefix" aria-hidden="true">URL /</span>
           <input
@@ -224,7 +224,7 @@ export function IngestionPanel() {
             inputMode="url"
             autoComplete="off"
             spellCheck={false}
-            placeholder="paste any website"
+            placeholder={tx("paste any website")}
             value={url}
             onChange={(e) => {
               signalIntent();
@@ -233,9 +233,9 @@ export function IngestionPanel() {
             onFocus={signalIntent}
             disabled={busy || !ready}
             className="ingest-input"
-            aria-label="Website URL"
+            aria-label={tx("Website URL")}
           />
-          <button type="submit" className="ingest-go" disabled={busy || !ready} aria-label="Extract">
+          <button type="submit" className="ingest-go" disabled={busy || !ready} aria-label={tx("Extract")}>
             {!ready ? (
               <span className="ingest-go-label is-busy">
                 [ INITIALIZING<span className="ingest-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span> ]
@@ -252,7 +252,7 @@ export function IngestionPanel() {
 
         {busy && (
           <div className="ingest-progress">
-            <ExtractionProgress variant="panel" hint="Usually 15–30 seconds" />
+            <ExtractionProgress variant="panel" hint={tx("Usually 15–30 seconds")} />
           </div>
         )}
 
@@ -279,14 +279,14 @@ export function IngestionPanel() {
             setZoneHover(false);
             if (e.dataTransfer.files?.length) addFiles(e.dataTransfer.files);
           }}
-          aria-label="Drop assets or click to browse"
+          aria-label={tx("Drop assets or click to browse")}
         >
-          <span className="ingest-zone-eyebrow">// drop zone</span>
+          <span className="ingest-zone-eyebrow">{tx("// drop zone")}</span>
           <span className="ingest-zone-title">
-            Drag &amp; drop a deck, logo, screenshot, or PDF
+            {tx("Drag & drop a deck, logo, screenshot, or PDF")}
           </span>
           <span className="ingest-zone-meta">
-            — or <u>click to browse</u> · PDF · PNG · JPG · WEBP · SVG · 20 MB each
+            {tx("— or click to browse · PDF · PNG · JPG · WEBP · SVG · 20 MB each")}
           </span>
           <input
             ref={inputRef}
@@ -324,8 +324,8 @@ export function IngestionPanel() {
       {dragActive && (
         <div className="ingest-overlay" aria-hidden="true">
           <div className="ingest-overlay-card">
-            <span className="ingest-overlay-eyebrow">// drop to ingest</span>
-            <span className="ingest-overlay-title">Release file</span>
+            <span className="ingest-overlay-eyebrow">{tx("// drop to ingest")}</span>
+            <span className="ingest-overlay-title">{tx("Release file")}</span>
             <span className="ingest-overlay-meta">
               PDF · PNG · JPG · WEBP · SVG — max {MAX_FILES} files, 20 MB each
             </span>
