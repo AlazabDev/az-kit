@@ -44,6 +44,9 @@ const arStrings: Record<string, string> = {
   "// drop to ingest": "// أفلت للإدخال",
   "Release file": "اترك الملف",
   "Site could not be read — kit uses generic defaults.": "تعذّر قراءة الموقع — ستستخدم العدّة قيماً افتراضية عامة.",
+  "exceeds 20 MB": "يتجاوز 20 م.ب",
+  "Max 10 files": "10 ملفات كحد أقصى",
+  "PDF · PNG · JPG · WEBP · SVG — max 10 files, 20 MB each": "PDF · PNG · JPG · WEBP · SVG — 10 ملفات كحد أقصى، 20 م.ب لكل ملف",
   // extraction progress
   "Reading the source": "قراءة المصدر",
   "Fetching markup, branding metadata, screenshots": "جلب الصفحة وبيانات الهوية ولقطات الشاشة",

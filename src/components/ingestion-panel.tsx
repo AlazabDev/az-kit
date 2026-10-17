@@ -70,7 +70,7 @@ export function IngestionPanel() {
     const next: File[] = [];
     for (const f of Array.from(incoming)) {
       if (f.size > MAX_BYTES) {
-        toast.error(`"${f.name}" exceeds 20 MB`);
+        toast.error(`"${f.name}" ${tx("exceeds 20 MB")}`);
         continue;
       }
       next.push(f);
@@ -78,7 +78,7 @@ export function IngestionPanel() {
     setFiles((prev) => {
       const merged = [...prev, ...next].slice(0, MAX_FILES);
       if (prev.length + next.length > MAX_FILES) {
-        toast.error(`Max ${MAX_FILES} files`);
+        toast.error(tx("Max 10 files"));
       }
       return merged;
     });
@@ -327,7 +327,7 @@ export function IngestionPanel() {
             <span className="ingest-overlay-eyebrow">{tx("// drop to ingest")}</span>
             <span className="ingest-overlay-title">{tx("Release file")}</span>
             <span className="ingest-overlay-meta">
-              PDF · PNG · JPG · WEBP · SVG — max {MAX_FILES} files, 20 MB each
+              {tx("PDF · PNG · JPG · WEBP · SVG — max 10 files, 20 MB each")}
             </span>
           </div>
         </div>
